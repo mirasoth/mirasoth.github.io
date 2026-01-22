@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" class="text-neutral-100">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mirasoth · Rational Infrastructure for AI</title>
+
+  <!-- Local Tailwind -->
+  <link rel="stylesheet" href="./assets/css/tailwind.css" />
+
+  <!-- Background: gradient + noise -->
+  <style>
+    body {
+      position: relative;
+      background: radial-gradient(
+        1200px 800px at 20% 10%,
+        #0f172a 0%,
+        #020617 60%,
+        #020617 100%
+      );
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'>\
+<filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/></filter>\
+<rect width='120' height='120' filter='url(%23n)' opacity='0.035'/>\
+</svg>");
+      background-repeat: repeat;
+      z-index: 0;
+    }
+
+    body > * {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+
+  <!-- Language Switch -->
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll("[data-lang]").forEach(el => {
+        el.classList.add("hidden");
+      });
+      document.querySelectorAll(`[data-lang='${lang}']`).forEach(el => {
+        el.classList.remove("hidden");
+      });
+    }
+  </script>
+</head>
+
+<body class="min-h-screen flex flex-col font-sans">
+
+  <!-- Header -->
+  <header class="flex items-center justify-between px-8 py-6">
+    <div class="text-lg font-medium tracking-wide">
+      Mirasoth
+    </div>
+    <div class="space-x-4 text-sm text-neutral-400">
+      <button onclick="switchLang('en')" class="hover:text-neutral-100">EN</button>
+      <button onclick="switchLang('zh')" class="hover:text-neutral-100">中文</button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="flex-1 flex flex-col justify-center px-8 md:px-20 max-w-5xl">
+
+    <!-- Hero -->
+    <section class="mb-20">
+      <h1 class="text-4xl md:text-5xl font-medium tracking-tight leading-tight mb-6">
+        <span data-lang="en">Rational Infrastructure for AI</span>
+        <span data-lang="zh" class="hidden">为 AI 构建理性的基础设施</span>
+      </h1>
+
+      <p class="text-neutral-400 text-lg max-w-2xl leading-relaxed">
+        <span data-lang="en">
+          Mirasoth builds controllable, interpretable, and evolvable intelligent systems —
+          designed as long-term foundations, not black boxes.
+        </span>
+        <span data-lang="zh" class="hidden">
+          Mirasoth 构建可控、可解释、可演化的智能系统，
+          作为长期稳定的基础能力，而非不可理解的黑盒。
+        </span>
+      </p>
+    </section>
+
+    <!-- Core Statement -->
+    <section class="mb-20 space-y-4 text-neutral-300 text-lg leading-relaxed max-w-3xl">
+      <p data-lang="en">
+        The challenge of AI is not intelligence.
+      </p>
+      <p data-lang="en">
+        It is structure, control, and long-term consistency.
+      </p>
+      <p data-lang="en">
+        We start from constraints, world models, and reasoning —
+        not short-term performance.
+      </p>
+
+      <p data-lang="zh" class="hidden">
+        AI 面临的挑战，从来不是智能本身。
+      </p>
+      <p data-lang="zh" class="hidden">
+        而是结构、可控性与长期一致性。
+      </p>
+      <p data-lang="zh" class="hidden">
+        我们从约束、世界建模与推理出发，
+        而不是追逐短期性能。
+      </p>
+    </section>
+
+    <!-- What We Build -->
+    <section class="mb-24">
+      <h2 class="text-xs uppercase tracking-widest text-neutral-500 mb-4">
+        <span data-lang="en">What we build</span>
+        <span data-lang="zh" class="hidden">我们在构建什么</span>
+      </h2>
+
+      <p class="text-neutral-300 text-lg max-w-3xl leading-relaxed">
+        <span data-lang="en">
+          A foundational intelligence layer that maintains world state,
+          long-term memory, and verifiable reasoning for AI systems.
+          <br><br>
+          Not an application. Not a one-shot model.
+          <br><br>
+          Intelligence should work like an operating system.
+        </span>
+
+        <span data-lang="zh" class="hidden">
+          一个用于维护世界状态、长期记忆与可验证推理的智能基础层。
+          <br><br>
+          不是应用，也不是一次性生成结果的模型。
+          <br><br>
+          智能，应当像操作系统一样工作。
+        </span>
+      </p>
+
+      <p class="mt-6 text-neutral-500 text-sm">
+        <span data-lang="en">Core system: Mizar</span>
+        <span data-lang="zh" class="hidden">核心系统：Mizar</span>
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="px-8 py-6 text-sm text-neutral-500 flex justify-between">
+    <div>© Mirasoth</div>
+    <div>www.mirasoth.com</div>
+  </footer>
+
+</body>
+</html>
